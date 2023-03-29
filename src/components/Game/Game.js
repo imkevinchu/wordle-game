@@ -14,7 +14,7 @@ console.info({ answer });
 
 function Game() {
   const [gameStatus, setGameStatus] = useState("running");
-  const [guessList, setGuessList] = useState(["GUEST", "HELLO", "LIKEN"]);
+  const [guessList, setGuessList] = useState([]);
 
   function handleSubmitGuess(guessInput) {
     const nextGuesses = [...guessList, guessInput];
