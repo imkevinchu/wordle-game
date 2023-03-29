@@ -21,8 +21,10 @@ function GuessInput({ handleSubmitGuess }) {
         value={guessInput}
         minLength={5}
         maxLength={5}
-        style={{ textTransform: "uppercase" }}
-        onChange={(e) => setGuessInput(e.target.value)}
+        onChange={(e) => {
+          const guessToUpperCase = e.target.value.toUpperCase();
+          setGuessInput(guessToUpperCase);
+        }}
       />
     </form>
   );
