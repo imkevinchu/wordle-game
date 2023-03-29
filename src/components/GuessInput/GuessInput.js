@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 
-function GuessInput() {
-  const [guess, setGuess] = useState("");
+function GuessInput({ handleSubmitGuess }) {
+  const [guessInput, setGuessInput] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    console.log(guess);
-    setGuess("");
+    handleSubmitGuess(guessInput);
+
+    setGuessInput("");
   }
 
   return (
@@ -17,11 +18,11 @@ function GuessInput() {
         required
         id="guess-input"
         type="text"
-        value={guess}
+        value={guessInput}
         minLength={5}
         maxLength={5}
         style={{ textTransform: "uppercase" }}
-        onChange={(e) => setGuess(e.target.value)}
+        onChange={(e) => setGuessInput(e.target.value)}
       />
     </form>
   );
